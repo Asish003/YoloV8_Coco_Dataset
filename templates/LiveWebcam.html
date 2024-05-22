@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VideoUpload</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/webcamStyles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="banner">
+            <div class="navbar">
+                <img src="{{ url_for('static', filename='images/logo-removebg-preview.png') }}" class="logo">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Predict</a></li>
+                    <li><a href="#">Segment</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+                <button type="button">MENU</button>
+            </div>
+        </div>
+
+        <div class="output-container">
+            <section class="col-sm">
+                <img src="{{ url_for('webapp') }}" alt="Live cam feed" class="webcam_output">
+            </section>
+        </div>
+    </div>
+</body>
+</html>

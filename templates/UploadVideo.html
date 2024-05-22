@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VideUpload</title>
+    <!-- <link rel="stylesheet" href="videoStyles.css"> -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/videoStyles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="banner">
+            <div class="navbar">
+                <!-- <img src="logo-removebg-preview.png" class="logo"> -->
+                <img src="{{ url_for('static', filename='images/logo-removebg-preview.png') }}" class="logo">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Predict</a></li>
+                    <li><a href="#">Segment</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+                <button type="button">MENU</button>
+            </div>
+        </div>
+
+        <div class="output-container">
+            <section class="col-sm">
+                <img src="{{ url_for('video') }}" alt="Upload video" class="yolo_output">
+            </section>
+
+            <section class="bottom-section">
+                <div class="new">
+                    <form method='POST' enctype="multipart/form-data" style="align-content: center; text-align: center;display: flex;">
+                        {{form.hidden_tag()}}
+                        {{form.file(class_="custom-file-input")}}
+                        <div>
+                            <button type="submit" name="favorite" value="x" class="btnCustom">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
